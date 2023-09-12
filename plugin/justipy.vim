@@ -23,3 +23,4 @@ if !exists("g:justify_cmd")
   let g:justipy_cmd = g:justipy_path
 endif
 
+silent command! -range=% Justify execute '<line1>,<line2>!' . g:justipy_cmd
