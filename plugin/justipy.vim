@@ -23,4 +23,8 @@ if !exists("g:justify_cmd")
   let g:justipy_cmd = g:justipy_path
 endif
 
-silent command! -nargs=? -range=% Justify execute '<line1>,<line2>!' . g:justipy_cmd . ' -w ' (<args> ? <args> : 80)
+if !exists("g:justipy_linewidth")
+  let g:justipy_linewidth = 80
+endif
+
+silent command! -nargs=? -range=% Justify execute '<line1>,<line2>!' . g:justipy_cmd . ' -w ' ('<args>' ? '<args>' : g:justipy_linewidth)
