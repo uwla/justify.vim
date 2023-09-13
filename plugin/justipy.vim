@@ -1,7 +1,7 @@
 " ------------------------------------------------------------------------------
 " title: justipy.vim
 " description: Vim plugin for justify aligning plain text
-" date: September 11, 2023
+" date: September, 2023
 " ------------------------------------------------------------------------------
 
 if exists("g:justipy_loaded")
