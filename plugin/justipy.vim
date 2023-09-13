@@ -28,3 +28,10 @@ if !exists("g:justipy_linewidth")
 endif
 
 silent command! -nargs=? -range=% Justify execute '<line1>,<line2>!' . g:justipy_cmd . ' -w ' ('<args>' ? '<args>' : g:justipy_linewidth)
+
+if exists("g:justipy_mappings")
+  if g:justipy_mappings == 1
+    nnoremap <M-j> vip:Justify<CR><CR>
+    vnoremap <M-j> :Justify<CR><CR>
+  endif
+endif
