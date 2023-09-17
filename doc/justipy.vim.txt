@@ -1,0 +1,163 @@
+*justipy.vim.txt*
+
+Date   : September 2023
+Author : uwla
+License: MIT
+Url    : https://github.com/uwla/justipy.vim
+
+================================================================================
+
+CONTENTS                                                  *justipy.vim-contents*
+
+Introduction                                         |justipy.nvim-introduction|
+Features                                             |justipy.nvim-features|
+Example                                              |justipy.nvim-example|
+Requirements                                         |justipy.nvim-requirements|
+Usage                                                |justipy.nvim-usage|
+Variables                                            |justipy.nvim-variables|
+
+================================================================================
+
+INTRODUCTION                                          *justipy.vim-introduction*
+
+*justipy.vim* is a Vim plugin to justify align plain text.
+
+It aligns lines of text to the same line width by adding  spaces  between  words
+smoothly.
+
+================================================================================
+
+FEATURES                                                  *justipy.vim-features*
+
+- custom line width
+- preserve indentation
+- preserve multiline prefix (comments)
+- preserve paragraphs
+- format text lists
+- indent list items
+- some LaTeX support
+
+================================================================================
+
+EXAMPLE                                                    *justipy.vim-example*
+
+The following text:
+
+>
+    Minima est voluptas dicta consequatur quia aut. Iusto necessitatibus ut et
+    et aut labore cupiditate fugiat. Itaque omnis pariatur debitis odit
+    placeat dolores. Nam molestiae nemo non placeat rem consectetur iste
+    eveniet.
+
+        Cumque laborum sunt ipsa asperiores est repellendus quis voluptas. At
+        incidunt consequuntur ullam. Est exercitationem quidem non et
+        distinctio eum ipsam aut.
+
+        // Et architecto est fuga et et deserunt. Et blanditiis ut rerum qui
+        // aut inventore. Et molestiae omnis quia dolorum eos.
+        //
+        //     * Corrupti at ipsam debitis et quod ut nobis fuga. Tenetur
+        //     dolores omnis id. Sint quod aut sit. Saepe cupiditate modi enim
+        //     omnis qui sint. Quis repellendus libero et.
+        //     * Quidem blanditiis recusandae est inventore. Ut assumenda
+        //     veritatis atque minima commodi necessitatibus et. Voluptatum
+        //     odio aut ut aut qui voluptatem porro sed.
+        //     * Molestias officiis molestiae voluptas asperiores quam non
+        //     temporibus.
+        //
+        // Iure in et ipsam minus recusandae odio. Quo dolore repellendus nam et
+
+    15. Dolor sed magni odio fugiat nisi sit temporibus officia. Fugiat sunt non ex doloremque voluptas quos facere ipsa. Consequatur assumenda deleniti culpa inventore vel dolores. Consectetur esse voluptatum omnis recusandae non. Et illum provident non veritatis assumenda numquam dolor ipsa. Adipisci voluptatibus nesciunt rerum et vel quaerat.
+    16. Assumenda tenetur quo et voluptates voluptatem blanditiis at illum. Tenetur quia incidunt voluptatem et in magni quis repudiandae. Maiores aut ut quo sequi error corrupti in vero.
+<
+
+Becomes:
+
+>
+    Minima est voluptas dicta consequatur quia aut. Iusto necessitatibus  ut  et
+    et aut labore cupiditate fugiat. Itaque omnis pariatur debitis odit  placeat
+    dolores. Nam molestiae nemo non placeat rem consectetur iste eveniet.
+
+        Cumque laborum sunt ipsa asperiores est repellendus  quis  voluptas.  At
+        incidunt consequuntur ullam. Est exercitationem quidem non et distinctio
+        eum ipsam aut.
+
+        // Et architecto est fuga et et deserunt. Et blanditiis ut rerum qui aut
+        // inventore. Et molestiae omnis quia dolorum eos.
+        //
+        //     * Corrupti at ipsam  debitis  et  quod  ut  nobis  fuga.  Tenetur
+        //       dolores omnis id. Sint quod aut sit. Saepe cupiditate modi enim
+        //       omnis qui sint. Quis repellendus libero et.
+        //     * Quidem  blanditiis  recusandae  est  inventore.  Ut   assumenda
+        //       veritatis atque minima commodi  necessitatibus  et.  Voluptatum
+        //       odio aut ut aut qui voluptatem porro sed.
+        //     * Molestias  officiis  molestiae  voluptas  asperiores  quam  non
+        //       temporibus.
+        //
+        // Iure in et ipsam minus recusandae odio. Quo dolore repellendus nam et
+
+    15. Dolor sed magni odio fugiat nisi sit temporibus officia. Fugiat sunt non
+        ex doloremque voluptas quos facere ipsa. Consequatur assumenda  deleniti
+        culpa  inventore  vel  dolores.  Consectetur   esse   voluptatum   omnis
+        recusandae non. Et illum provident non veritatis assumenda numquam dolor
+        ipsa. Adipisci voluptatibus nesciunt rerum et vel quaerat.
+    16. Assumenda tenetur quo et  voluptates  voluptatem  blanditiis  at  illum.
+        Tenetur quia incidunt voluptatem et in magni quis  repudiandae.  Maiores
+        aut ut quo sequi error corrupti in vero.
+<
+
+================================================================================
+
+REQUIREMENTS                                          *justipy.vim-requirements*
+
+*Pythonr3* is required because it uses a Python  script  to  justify  the  text,
+rather than VimScript.
+
+================================================================================
+
+USAGE                                                        *justipy.vim-usage*
+
+                                                                      *:Justify*
+Select the desired text to be align using Visual Mode,  then  type  the  command
+|:Justify| to justify the lines.
+
+You can optionally specifiy the line it by appending the desired value after the
+command, such as |:Justify 72| to justify the text to 72 characters per line.
+
+================================================================================
+
+VARIABLES                                                *justipy.vim-variables*
+
+                                                                *g:justipy_path*
+g:justipy_path
+    Default: '~/.local/share/vim_justipy/justify.py'
+
+Where to save the Python script if downloading it is needed.
+
+                                                                *g:justipy_cmd*
+g:justipy_cmd
+    Default: |g:justipy_path|
+
+The command to run when justifying text.
+If overwritten by the user, the  script won't be downloaded.
+
+                                                           *g:justipy_linewidth*
+g:justipy_linewidth
+    Default: 80
+
+The line width used by the |:Justify| command when it is not  specified  by  the
+command arguments.
+
+                                                            *g:justipy_mappings*
+g:justipy_mappings
+    Default: 0
+
+If set to `1`, it will add the following keymaps:
+
+>
+  nmap <M-j> vip:Justify<CR><CR>
+  vmap <M-j> :Justify<CR><CR>
+<
+
+================================================================================
+vim:tw=80:ft=help
