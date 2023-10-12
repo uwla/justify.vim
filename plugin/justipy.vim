@@ -31,7 +31,7 @@ silent command! -nargs=? -range=% Justify execute '<line1>,<line2>!' . g:justipy
 
 if exists("g:justipy_mappings")
   if g:justipy_mappings == 1
-    nnoremap <M-j> vip:Justify<CR><CR>
-    vnoremap <M-j> :Justify<CR><CR>
+    nmap <M-j> vip:Justify<CR><CR>
+    vmap <M-j> :Justify<CR><CR>
   endif
 endif
