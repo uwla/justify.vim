@@ -1,4 +1,4 @@
-# JUSTIPY.VIM
+# JUSTIFY.VIM
 
 Vim plugin to justify-align text.
 
@@ -89,26 +89,26 @@ vmap <M-j> :Justify<CR><CR>
 
 ## CONFIG
 
-This plugin is a wrapper to `justipy`, a Python script used to justify text.  It
-downloads the script from GitHub,  save  it  locally,  and  pass  the  text  and
-arguments to the script, which actually does the job of justifying text.
+This plugin is a wrapper for the Python script `justify.py`.  It  downloads  the
+script from GitHub, save it locally, and pass the  text  and  arguments  to  the
+script, which actually does the job of justifying text.
 
-### `g:justipy_path`
+### `g:justify_path`
 
 Where to save the Python  script  if  downloading  it  is  needed.  Defaults  to
-`~/.local/share/vim_justipy/justify.py`
+`~/.local/share/vim_justify/justify.py`
 
-### `g:justipy_cmd`
+### `g:justify_cmd`
 
 The  command  to  run  when  justifying  text.  Defaults   to   the   value   of
-`g:justipy_path`. If overwritten by the user, the script won't be downloaded.
+`g:justify_path`. If overwritten by the user, the script won't be downloaded.
 
-### `g:justipy_linewidth`
+### `g:justify_linewidth`
 
 The line width used by the `Justify` command when it is  not  specified  by  the
 arguments. Defauls to `80`.
 
-### `g:justipy_mappings`
+### `g:justify_mappings`
 
 If set to `1`, it will add keymaps. Defaults to `0`. The keymaps are:
 
@@ -117,4 +117,4 @@ If set to `1`, it will add keymaps. Defaults to `0`. The keymaps are:
 
 ## ABOUT
 
-See [Justipy](https://github.com/uwla/justipy).
+See [justify.py](https://github.com/uwla/justify.py).

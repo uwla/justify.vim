@@ -1,33 +1,33 @@
-*justipy.vim.txt*
+*justify.vim.txt*
 
 Date   : September 2023
 Author : uwla
 License: MIT
-Url    : https://github.com/uwla/justipy.vim
+Url    : https://github.com/uwla/justify.vim
 
 ================================================================================
 
-CONTENTS                                                  *justipy.vim-contents*
+CONTENTS                                                  *justify.vim-contents*
 
-Introduction                                         |justipy.nvim-introduction|
-Features                                             |justipy.nvim-features|
-Example                                              |justipy.nvim-example|
-Requirements                                         |justipy.nvim-requirements|
-Usage                                                |justipy.nvim-usage|
-Variables                                            |justipy.nvim-variables|
+Introduction                                         |justify.nvim-introduction|
+Features                                             |justify.nvim-features|
+Example                                              |justify.nvim-example|
+Requirements                                         |justify.nvim-requirements|
+Usage                                                |justify.nvim-usage|
+Variables                                            |justify.nvim-variables|
 
 ================================================================================
 
-INTRODUCTION                                          *justipy.vim-introduction*
+INTRODUCTION                                          *justify.vim-introduction*
 
-*justipy.vim* is a Vim plugin to justify align plain text.
+*justify.vim* is a Vim plugin to justify align plain text.
 
 It aligns lines of text to the same line width by adding  spaces  between  words
 smoothly.
 
 ================================================================================
 
-FEATURES                                                  *justipy.vim-features*
+FEATURES                                                  *justify.vim-features*
 
 - custom line width
 - preserve indentation
@@ -39,7 +39,7 @@ FEATURES                                                  *justipy.vim-features*
 
 ================================================================================
 
-EXAMPLE                                                    *justipy.vim-example*
+EXAMPLE                                                    *justify.vim-example*
 
 The following text:
 
@@ -108,14 +108,14 @@ Becomes:
 
 ================================================================================
 
-REQUIREMENTS                                          *justipy.vim-requirements*
+REQUIREMENTS                                          *justify.vim-requirements*
 
 *Pythonr3* is required because it uses a Python  script  to  justify  the  text,
 rather than VimScript.
 
 ================================================================================
 
-USAGE                                                        *justipy.vim-usage*
+USAGE                                                        *justify.vim-usage*
 
                                                                       *:Justify*
 Select the desired text to be align using Visual Mode,  then  type  the  command
@@ -126,30 +126,30 @@ command, such as |:Justify 72| to justify the text to 72 characters per line.
 
 ================================================================================
 
-VARIABLES                                                *justipy.vim-variables*
+VARIABLES                                                *justify.vim-variables*
 
-                                                                *g:justipy_path*
-g:justipy_path
-    Default: '~/.local/share/vim_justipy/justify.py'
+                                                                *g:justify_path*
+g:justify_path
+    Default: '~/.local/share/vim_justify/justify.py'
 
 Where to save the Python script if downloading it is needed.
 
-                                                                *g:justipy_cmd*
-g:justipy_cmd
-    Default: |g:justipy_path|
+                                                                *g:justify_cmd*
+g:justify_cmd
+    Default: |g:justify_path|
 
 The command to run when justifying text.
 If overwritten by the user, the  script won't be downloaded.
 
-                                                           *g:justipy_linewidth*
-g:justipy_linewidth
+                                                           *g:justify_linewidth*
+g:justify_linewidth
     Default: 80
 
 The line width used by the |:Justify| command when it is not  specified  by  the
 command arguments.
 
-                                                            *g:justipy_mappings*
-g:justipy_mappings
+                                                            *g:justify_mappings*
+g:justify_mappings
     Default: 0
 
 If set to `1`, it will add the following keymaps:
